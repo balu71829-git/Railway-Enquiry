@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Enquiries</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            margin: 0;
+            padding: 0;
+        }
+        .table-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 25px;
+            background: #ffffffcc;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+        tr:hover {
+            background: #e0f0ff;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+        center {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h2>Stored Enquiries</h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Train No</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Date</th>
+        </tr>
+
+        <tr th:each="e, i : ${enquiries}">
+            <td th:text="${i.index + 1}"></td>
+            <td th:text="${e.passengerName}"></td>
+            <td th:text="${e.trainNumber}"></td>
+            <td th:text="${e.source}"></td>
+            <td th:text="${e.destination}"></td>
+            <td th:text="${e.dateOfJourney}"></td>
+        </tr>
+    </table>
+
+    <center><a href="/">Back to Form</a></center>
+</div>
+
+</body>
+</html>

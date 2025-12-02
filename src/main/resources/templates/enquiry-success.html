@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enquiry Success</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fddb92, #d1fdff);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 450px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #ffffffcc;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: green;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin: 15px 10px 0 10px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enquiry Submitted Successfully</h2>
+    <p th:text="${message}"></p>
+
+    <ul>
+        <li><b>Name:</b> <span th:text="${data.passengerName}"></span></li>
+        <li><b>Train:</b> <span th:text="${data.trainNumber}"></span></li>
+        <li><b>Source:</b> <span th:text="${data.source}"></span></li>
+        <li><b>Destination:</b> <span th:text="${data.destination}"></span></li>
+        <li><b>Date:</b> <span th:text="${data.dateOfJourney}"></span></li>
+    </ul>
+
+    <a href="/">Back to Form</a>
+    <a href="/list">View All Enquiries</a>
+</div>
+
+</body>
+</html>
