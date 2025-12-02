@@ -4,7 +4,7 @@ pipeline {
     tools {
         git 'GitDefault'    // your configured Git
         maven 'Maven3'
-        jdk 'JDK21'
+        jdk 'Java21'
     }
 
     stages {
